@@ -5,7 +5,8 @@ setup virtual-enviroment:
 
 ---- YouTube converter Module ----
 requirements:
-1. `pip install yt-dlp`
+0. `sudo apt install pip`
+1. `pip install yt-dlp` or `sudo apt install yt-dlp`
 2. `sudo apt install ffmpeg`      # Debian/Ubuntu
    `brew install ffmpeg`          # macOS
    `choco install ffmpeg`         # Windows
@@ -14,6 +15,7 @@ requirements:
 requirements:
 1.	`git clone https://github.com/metabrainz/musicbrainz-docker.git`
 2.	`cd musicbrainz-docker`
-3.	`docker compose run --rm musicbrainz createdb.sh -fetch`
-4.	`docker compose up -d`
-5.	`docker compose exec indexer python -m sir reindex` 				# Build index
+3.	`docker compose build`
+4.	`docker compose run --rm musicbrainz createdb.sh -fetch`
+5.	`docker compose up -d`
+6.	`docker compose exec indexer python -m sir reindex` 				# Build index
