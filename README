@@ -1,0 +1,19 @@
+setup virtual-enviroment:
+	1. python3 -m venv venv
+	2. source venv/bin/activate (just this if venv already setupped)
+	3. install libraryes
+
+---- YouTube converter Module ----
+requirements:
+1. `pip install yt-dlp`
+2. `sudo apt install ffmpeg`      # Debian/Ubuntu
+   `brew install ffmpeg`          # macOS
+   `choco install ffmpeg`         # Windows
+
+---- MusicBrainz server Module ----
+requirements:
+1.	`git clone https://github.com/metabrainz/musicbrainz-docker.git`
+2.	`cd musicbrainz-docker`
+3.	`docker compose run --rm musicbrainz createdb.sh -fetch`
+4.	`docker compose up -d`
+5.	`docker compose exec indexer python -m sir reindex` 				# Build index
